@@ -34,11 +34,19 @@
             "imageWidth": 76
           }
         }
-      ]
+      ],
+      "expo-sqlite"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "33969208-b7e2-420a-ab3b-c566e9f2368f"
+      }
+    },
+    "owner": "nikolayzhechevs-team"
   }
 }
