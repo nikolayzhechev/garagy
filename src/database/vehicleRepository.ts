@@ -109,6 +109,19 @@ export async function getVehicleById (db: SQLiteDatabase, vehicleId: number): Pr
     );
 }
 
+export function getVehicleByRegistrationNumber (db: SQLiteDatabase, registrationNumber: string): Promise<Vehicle | null>{
+    return db.getFirstAsync<Vehicle>(
+        `
+            SELECT
+                id,
+                registration_number
+            FROM vehicles
+            WHERE registration_number = ?
+        `,
+        registrationNumber
+    );
+}
+
 export async function deleteVehicle (db: SQLiteDatabase, vehicleId: number): Promise<void> {
     await db.runAsync(
         `DELETE FROM vehicles WHERE id = ?`,
